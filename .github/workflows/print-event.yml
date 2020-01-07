@@ -1,0 +1,7 @@
+# prints all GitHub events
+name: Print event
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event }}

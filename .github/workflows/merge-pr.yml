@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: echo ${{ github.event }}
       - uses: maxkomarychev/merge-pal-action@v0.5.1
         if: github.event.pull_request.head.ref == 'develop'
         with:

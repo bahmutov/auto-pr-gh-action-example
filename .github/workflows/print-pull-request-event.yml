@@ -1,5 +1,5 @@
-# prints all GitHub events
-name: Print event
+# prints GitHub event details for Pull Requests
+name: Print PR event
 on:
   pull_request
 jobs:

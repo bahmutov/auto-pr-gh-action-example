@@ -5,5 +5,9 @@ This repository has `develop` as the default branch, and `master` as "production
 
 **Note:** workflow actions [cannot trigger other workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows#about-workflow-events) and [this issue](https://github.com/pascalgn/automerge-action#limitations). If one workflow creates a pull request, other workflows cannot merge it automatically.
 
+To get around workflow to workflow problem, only the `create-pr` GH action is used in this repo. Every time you land a pull request into `develop` this action opens a PR into `master` with label `auto-pr`. Then [Mergify](https://mergify.io) bot notices the pull request, waits for CircleCI to successfully build it, and merges the PR, see settings in [.mergify.yml](.mergify.yml) file.
+
+I have left the [.github/workflows/merge-pr.yml](.github/workflows/merge-pr.yml) just for show. If you open a pull request from `develop` to `master` manually, add label `auto-pr`, then this action will merge it automatically, see [.mergepal.yml](.mergepal.yml) settings.
+
 [mergify]: https://mergify.io
 [mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/bahmutov/auto-pr-gh-action-example&style=flat

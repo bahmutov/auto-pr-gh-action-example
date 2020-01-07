@@ -1,9 +1,9 @@
 name: Maybe merge PR from develop to master
 on:
-  pull_request:
+  pull_request: # try to merge if labels have changed (white/black list)
     types:
-      - opened
-      - synchronize
+      - labeled
+      - unlabeled
 jobs:
   merge-auto-pr:
     runs-on: ubuntu-latest

@@ -3,16 +3,15 @@ name: Merge PR from develop to master
 # only runs for pull requests from develop to master branch
 # with title matching "create-pr.yml" setting
 on:
-  pull_request:
-    branches:
-      - master
+  pull_request
+    # branches:
+    #   - master
 
 jobs:
-  merge-build:
+  merge-auto-pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: echo ${{ github.event }}
       - uses: maxkomarychev/merge-pal-action@v0.5.1
         if: github.event.pull_request.head.ref == 'develop'
         with:

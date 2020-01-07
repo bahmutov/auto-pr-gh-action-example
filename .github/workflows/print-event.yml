@@ -1,5 +1,7 @@
 # prints all GitHub events
 name: Print event
+on:
+  pull_request
 jobs:
   print:
     runs-on: ubuntu-latest

@@ -3,7 +3,7 @@ pull_request_rules:
     conditions:
       # pull request has label set by our create PR action
       - label=auto-pr
-      - status-success="ci/circleci: build"
+      - status-success='ci/circleci: build'
     actions:
       merge:
         method: merge

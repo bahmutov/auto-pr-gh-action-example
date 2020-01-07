@@ -1,0 +1,11 @@
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows
+name: Print status
+on: status
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Event
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+        run: echo $GITHUB_EVENT

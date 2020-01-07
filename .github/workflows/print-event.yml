@@ -6,4 +6,7 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event }}
+      - name: GitHub Event
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+        run: echo $GITHUB_EVENT

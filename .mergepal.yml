@@ -1,0 +1,7 @@
+# settings for https://github.com/maxkomarychev/merge-pal-action
+# to automatically merge automated pull requests
+# by looking for specific label
+whitelist:
+  - auto-pr
+# never squash "develop" to "master" pull requests
+method: merge
